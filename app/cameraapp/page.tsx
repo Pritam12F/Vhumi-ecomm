@@ -3,9 +3,12 @@
 import { FarmForm } from "@/components/form-comp";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useState } from "react";
+import { WebcamCapture } from "@/components/camera-comp";
 
 export default function Component() {
+  const [cameraState, setCameraState] = useState<boolean>(false);
+
   return (
     <div key="1" className="flex flex-col min-h-screen">
       <header className="bg-[#007b83] py-4 shadow-md">
@@ -27,9 +30,21 @@ export default function Component() {
                 unique and innovative experience for users.
               </p>
               <div className="mt-6">
-                <Button className="bg-[#007b83] text-white rounded-md shadow-md hover:bg-[#005a5f] px-6 py-3 text-sm md:px-8 md:py-4 md:text-base lg:px-10 lg:py-5 lg:text-lg">
-                  Open Camera
+                <Button
+                  className="bg-[#007b83] text-white rounded-md shadow-md hover:bg-[#005a5f] px-6 py-3 text-sm md:px-8 md:py-4 md:text-base lg:px-10 lg:py-5 lg:text-lg"
+                  onClick={() => {
+                    if (cameraState) {
+                      setCameraState(false);
+                    } else {
+                      setCameraState(true);
+                    }
+                  }}
+                >
+                  {cameraState ? "Close camera" : "Open camera"}
                 </Button>
+                {cameraState ? (
+                  <WebcamCapture facingType={{ exact: "environment" }} />
+                ) : null}
               </div>
             </section>
             <hr className="border-t border-gray-200" />
