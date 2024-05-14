@@ -1,19 +1,7 @@
-"use client";
-
 import { FarmForm } from "@/components/form-comp";
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { useState } from "react";
-import { WebcamCapture } from "@/components/camera-comp";
-<<<<<<< HEAD
-import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
-=======
->>>>>>> a76c0f9a7f72cd6a5007123b2eb89ead1a9bc708
 
 export default function Component() {
-  const [cameraState, setCameraState] = useState<boolean>(false);
-
   return (
     <div key="1" className="flex flex-col min-h-screen">
       <header className="bg-[#007b83] py-4 shadow-md">
@@ -34,33 +22,6 @@ export default function Component() {
                 MAYA-B 0.01 is a revolutionary camera application that offers a
                 unique and innovative experience for users.
               </p>
-              <div className="mt-6">
-                <Button
-                  className="bg-[#007b83] text-white rounded-md shadow-md hover:bg-[#005a5f] px-6 py-3 text-sm md:px-8 md:py-4 md:text-base lg:px-10 lg:py-5 lg:text-lg"
-                  onClick={() => {
-                    if (cameraState) {
-                      setCameraState(false);
-                    } else {
-                      setCameraState(true);
-                    }
-                  }}
-                >
-                  {cameraState ? "Close camera" : "Open camera"}
-                </Button>
-<<<<<<< HEAD
-                {cameraState ? <WebcamCapture facingType={"user"} /> : null}
-              </div>
-              <div>
-                <Label for="cameraFileInput">
-                  <span>Open camera</span>
-                  <Input id="cameraFileInput" type="file" accept="image/*" />
-                </Label>
-=======
-                {cameraState ? (
-                  <WebcamCapture facingType={{ exact: "environment" }} />
-                ) : null}
->>>>>>> a76c0f9a7f72cd6a5007123b2eb89ead1a9bc708
-              </div>
             </section>
             <hr className="border-t border-gray-200" />
             <section className="p-8 md:p-10 lg:p-12">
