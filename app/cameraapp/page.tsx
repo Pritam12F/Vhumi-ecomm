@@ -5,8 +5,11 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { useState } from "react";
 import { WebcamCapture } from "@/components/camera-comp";
+<<<<<<< HEAD
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
+=======
+>>>>>>> a76c0f9a7f72cd6a5007123b2eb89ead1a9bc708
 
 export default function Component() {
   const [cameraState, setCameraState] = useState<boolean>(false);
@@ -44,6 +47,7 @@ export default function Component() {
                 >
                   {cameraState ? "Close camera" : "Open camera"}
                 </Button>
+<<<<<<< HEAD
                 {cameraState ? <WebcamCapture facingType={"user"} /> : null}
               </div>
               <div>
@@ -51,6 +55,11 @@ export default function Component() {
                   <span>Open camera</span>
                   <Input id="cameraFileInput" type="file" accept="image/*" />
                 </Label>
+=======
+                {cameraState ? (
+                  <WebcamCapture facingType={{ exact: "environment" }} />
+                ) : null}
+>>>>>>> a76c0f9a7f72cd6a5007123b2eb89ead1a9bc708
               </div>
             </section>
             <hr className="border-t border-gray-200" />

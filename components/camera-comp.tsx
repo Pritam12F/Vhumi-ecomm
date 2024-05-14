@@ -5,7 +5,11 @@ import { Button } from "./ui/button";
 export const WebcamCapture = ({
   facingType,
 }: {
+<<<<<<< HEAD
   facingType: "user" | "environment";
+=======
+  facingType: "user" | { exact: "environment" };
+>>>>>>> a76c0f9a7f72cd6a5007123b2eb89ead1a9bc708
 }) => {
   const videoConstraints = {
     width: 1920,
@@ -18,7 +22,10 @@ export const WebcamCapture = ({
   const imageRef = useRef(null);
 
   const capture = useCallback(async () => {
+<<<<<<< HEAD
     //@ts-ignore
+=======
+>>>>>>> a76c0f9a7f72cd6a5007123b2eb89ead1a9bc708
     const imageSrc = webcamRef.current.getScreenshot();
     setUrl(imageSrc);
   }, [webcamRef]);
